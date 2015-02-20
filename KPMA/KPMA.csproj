@@ -161,6 +161,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="AddProject.aspx" />
     <Content Include="AddUser.aspx" />
     <Content Include="App_Data\KPMA.mdf" />
     <Content Include="App_Data\KPMA_log.ldf">
@@ -210,9 +211,12 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="UpdateProject.aspx" />
     <Content Include="UserDetails.aspx" />
     <Content Include="UserL.aspx" />
     <Content Include="UserLV.aspx" />
+    <Content Include="ViewProjectDetails.aspx" />
+    <Content Include="ViewProjectsaspx.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -332,6 +336,12 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AddProject.aspx.cs">
+      <DependentUpon>AddProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddProject.aspx.designer.cs">
+      <DependentUpon>AddProject.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddUser.aspx.cs">
       <DependentUpon>AddUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -384,6 +394,12 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="UpdateProject.aspx.cs">
+      <DependentUpon>UpdateProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateProject.aspx.designer.cs">
+      <DependentUpon>UpdateProject.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserDetails.aspx.cs">
       <DependentUpon>UserDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -404,6 +420,18 @@
     </Compile>
     <Compile Include="UserLV.aspx.designer.cs">
       <DependentUpon>UserLV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProjectDetails.aspx.cs">
+      <DependentUpon>ViewProjectDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProjectDetails.aspx.designer.cs">
+      <DependentUpon>ViewProjectDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProjectsaspx.aspx.cs">
+      <DependentUpon>ViewProjectsaspx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProjectsaspx.aspx.designer.cs">
+      <DependentUpon>ViewProjectsaspx.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
