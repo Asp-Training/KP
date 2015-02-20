@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddUser.aspx.cs" Inherits="KPMA.AddUser" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:FormView ID="FormView1" runat="server" DataKeyNames="Id" DataSourceID="SqlDataSource1" DefaultMode="Insert" RenderOuterTable="False">
+    
+    <asp:FormView ID="FormView1" runat="server" DataKeyNames="Id" DataSourceID="SqlDataSource1" DefaultMode="Insert" RenderOuterTable="False" OnPageIndexChanging="FormView1_PageIndexChanging">
         <EditItemTemplate>
             Id:
                         <asp:Label ID="IdLabel1" runat="server" Text='<%# Eval("Id") %>' />
@@ -27,8 +28,8 @@
                     <td>
                         <asp:TextBox ID="nameTextBox" runat="server" CssClass="form-control" Text='<%# Bind("name") %>' /></td>
                     <td>
-                        <asp:RequiredFieldValidator CssClass="text-danger" runat="server" ID="reqName" ControlToValidate="nameTextBox" ErrorMessage="Please enter name!" /></td>
-                      <td><asp:RegularExpressionValidator ID="regName" runat="server" 
+                        <asp:RequiredFieldValidator Display="Dynamic" CssClass="text-danger" runat="server" ID="reqName" ControlToValidate="nameTextBox" ErrorMessage="Please enter name!" />
+                      <asp:RegularExpressionValidator Display="Dynamic" ID="regName" runat="server" 
        ControlToValidate="nameTextBox" Cssclass="text-danger"
        ValidationExpression="^[a-zA-Z'.\s]{1,50}"
        Text="Enter a valid name" /> </td>
@@ -40,9 +41,9 @@
                         <asp:TextBox ID="email_idTextBox" runat="server" CssClass="form-control" Text='<%# Bind("email_id") %>' /></td>
 
                     <td>
-                        <asp:RequiredFieldValidator CssClass="text-danger" runat="server" ID="RequiredFieldValidator1" ControlToValidate="email_idTextBox" ErrorMessage="Please enter email id!" /></td>
-                <td><asp:RegularExpressionValidator  CssClass="text-danger" ID="regexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="email_idTextBox" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>
-                </td></tr>
+                        <asp:RequiredFieldValidator Display="Dynamic" CssClass="text-danger" runat="server" ID="RequiredFieldValidator1" ControlToValidate="email_idTextBox" ErrorMessage="Please enter email id!" />
+                <asp:RegularExpressionValidator Display="Dynamic" CssClass="text-danger" ID="regexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="email_idTextBox" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>
+                </tr>
 
                 <tr>
                     <td>Password:</td>
@@ -50,15 +51,17 @@
                         <asp:TextBox TextMode="password" CssClass="form-control" ID="passwordTextBox" runat="server" Text='<%# Bind("password") %>' />
                     </td>
                      <td>
-                        <asp:RequiredFieldValidator CssClass="text-danger" runat="server" ID="RequiredFieldValidator3" ControlToValidate="roleTextBox" ErrorMessage="Please enter Password!" /></td>
+                        <asp:RequiredFieldValidator Display="Dynamic" CssClass="text-danger" runat="server" ID="RequiredFieldValidator3" ControlToValidate="roleTextBox" ErrorMessage="Please enter Password!" /></td>
                 </tr>
                 <tr>
                     <td>Role:</td>
                     <td>
-                        <asp:TextBox ID="roleTextBox" runat="server" CssClass="form-control" Text='<%# Bind("role") %>' /></td>
-
+                        <asp:DropDownList ID="roleTextBox" CssClass="form-control" runat="server" SelectedValue='<%# Bind("role") %>'>
+                        <asp:ListItem>Lead</asp:ListItem>
+                        <asp:ListItem>Engineer</asp:ListItem>
+                        </asp:DropDownList>
                     <td>
-                        <asp:RequiredFieldValidator CssClass="text-danger" runat="server" ID="RequiredFieldValidator2" ControlToValidate="roleTextBox" ErrorMessage="Please enter Role!" /></td>
+                        <asp:RequiredFieldValidator Display="Dynamic" CssClass="text-danger" runat="server" ID="RequiredFieldValidator2" ControlToValidate="roleTextBox" ErrorMessage="Please enter Role!" /></td>
                 </tr>
                 <tr>
                     <td>Active:</td>
@@ -72,7 +75,6 @@
                     <td>
                         <asp:LinkButton ID="InsertCancelButton" CssClass="btn btn-default" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" /></td>
                 </tr>
-
             </table>
         </InsertItemTemplate>
         <ItemTemplate>
