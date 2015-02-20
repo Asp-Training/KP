@@ -5,8 +5,8 @@
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
             <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
-            <asp:BoundField DataField="task_name" HeaderText="task_name" SortExpression="task_name" />
-            <asp:BoundField DataField="description" HeaderText="description" SortExpression="description" />
+            <asp:BoundField DataField="task_name" HeaderText="Task Name" SortExpression="task_name" />
+            <asp:BoundField DataField="description" HeaderText="Description" SortExpression="description" />
             <asp:TemplateField HeaderText="assigned_to" SortExpression="assigned_to">
                 <EditItemTemplate>
                     <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="name" DataValueField="name" SelectedValue='<%# Bind("assigned_to") %>'>
@@ -16,8 +16,8 @@
                     <asp:Label ID="Label1" runat="server" Text='<%# Bind("assigned_to") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField DataField="begin_date" HeaderText="begin_date" SortExpression="begin_date" />
-            <asp:BoundField DataField="end_date" HeaderText="end_date" SortExpression="end_date" />
+            <asp:BoundField DataField="begin_date" HeaderText="Begin Date" SortExpression="begin_date" />
+            <asp:BoundField DataField="end_date" HeaderText="End Date" SortExpression="end_date" />
             <asp:TemplateField HeaderText="milestone" SortExpression="milestone">
                 <EditItemTemplate>
                     <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource3" DataTextField="milestone_name" DataValueField="milestone_name" SelectedValue='<%# Bind("milestone") %>'>
@@ -27,7 +27,7 @@
                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("milestone") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField DataField="project" HeaderText="project" SortExpression="project" />
+            <asp:BoundField DataField="project" HeaderText="Project" SortExpression="project" />
             <asp:TemplateField HeaderText="status" SortExpression="status">
                 <EditItemTemplate>
                     <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource4" DataTextField="status_value" DataValueField="status_value" SelectedValue='<%# Bind("status") %>'>
@@ -37,7 +37,7 @@
                     <asp:Label ID="Label3" runat="server" Text='<%# Bind("status") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField DataField="notes" HeaderText="notes" SortExpression="notes" />
+            <asp:BoundField DataField="notes" HeaderText="Notes" SortExpression="notes" />
         </Columns>
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
